@@ -22,7 +22,7 @@ HTML (hypertext markup language)의 약자로써 익히 일려 진 웹 서비스
 <!doctype html>
 <html>
   <head>
-    <title>Hello HTML</title>
+    <title>Lion's HTML</title>
   </head>
   <body>
     <p>Hello Lion!</p>
