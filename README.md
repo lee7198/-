@@ -15,7 +15,6 @@
 
 ### week_1
   * HTML, CSS, Javascript 란?
-   * 
   * 브라우저의 동작 방식에 대해서
   * DOM에 대해서
   * HTTP, HTTPS에 대해서
