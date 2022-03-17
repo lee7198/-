@@ -88,8 +88,8 @@ alert("Hello Lion!");
 ###### HTTP
 클라이언트 프로그램(웹 브라우저)는 URI(uniform resource identifiers)를 활용해  WWW 상에서 리소스 위치를 찾습니다. 리소스는 문서, 이미지, 동영상 등 모든 것이 될 수 있습니다. 웹페이지의 위치를 나타내기 위해 사용되는 http://www.naver.com 을 분석해 보자면
 
- 1. http : 리소스에 접근하기 위해 HTTP 프로토콜을 사용한다.
- 2. www.naver.com : 리소스의 인터넷 위치이며, DNS를 통해 IP 주소로 변환되어 서버의 위치를 찾을 수 있다.
+ * http : 리소스에 접근하기 위해 HTTP 프로토콜을 사용한다.
+ * www.naver.com : 리소스의 인터넷 위치이며, DNS를 통해 IP 주소로 변환되어 서버의 위치를 찾을 수 있다.
  
 ###### HTTP 통신을 서버에 활용하려면 일부 Method를 통해 요청할 수 있고 종류는 GET, POST, PUT, DELETE, HEAD 등 이 있으며 정보를 요청 및 수정이 가능합니다.
 
