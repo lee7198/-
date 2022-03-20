@@ -8,138 +8,142 @@
     />
     <title>LIKELION 2Week</title>
     <style>
-      @font-face {
-        font-family: "Cafe24SsurroundAir";
-        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff")
-          format("woff");
-        font-weight: normal;
-        font-style: normal;
-      }
-      * {
-        font-family: "Cafe24SsurroundAir";
-        margin: 0;
-        padding: 0;
-      }
-      body {
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-        background-color: #babec5;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+            @font-face {
+              font-family: "Cafe24SsurroundAir";
+              src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff")
+                format("woff");
+              font-weight: normal;
+              font-style: normal;
+            }
+            * {
+              font-family: "Cafe24SsurroundAir";
+              margin: 0;
+              padding: 0;
+            }
+            body {
+              width: 100%;
+      <<<<<<< HEAD
+              height: 100vh;
+              overflow: hidden;
+      =======
+              height: 100%;
+      >>>>>>> 46a50f80775959fc800cff32e7deb4d059e2f2c8
+              background-color: #babec5;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
 
-      .form_area {
-        width: 100%;
-        max-width: 450px;
-        background: url("/img/bg_01.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        overflow: hidden;
-        box-shadow: 3px 4px 6px #00000047;
-      }
+            .form_area {
+      width: 80%;
+              max-width: 450px;
+              background: url("img/bg_01.jpg");
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-position: center;
+              overflow: hidden;
+              box-shadow: 3px 4px 6px #00000047;
+            }
 
-      .form_area .form_section {
-        background-color: rgb(137 159 188 / 80%);
-        width: 80%;
-        min-height: 500px;
-        padding: 30px 10%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-      .form_area .form_section .form_nav {
-        /* margin-bottom: 30px; */
-        padding: 10px 0;
-      }
-      .form_area .form_section .form_nav li {
-        display: inline-block;
-        margin-right: 10px;
-        letter-spacing: 0.5px;
-        color: #ffffff82;
-        cursor: pointer;
-        font-size: 20px;
-      }
+            .form_area .form_section {
+              background-color: rgb(137 159 188 / 80%);
+              width: 80%;
+              min-height: 500px;
+              padding: 30px 10%;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+            }
+            .form_area .form_section .form_nav {
+              /* margin-bottom: 30px; */
+              padding: 10px 0;
+            }
+            .form_area .form_section .form_nav li {
+              display: inline-block;
+              margin-right: 10px;
+              letter-spacing: 0.5px;
+              color: #ffffff82;
+              cursor: pointer;
+              font-size: 20px;
+            }
 
-      .form_area .form_section .form_nav li.active {
-        border-bottom: 2px solid #37425c;
-        color: #fff;
-      }
+            .form_area .form_section .form_nav li.active {
+              border-bottom: 2px solid #37425c;
+              color: #fff;
+            }
 
-      .form_area .form_section .form_input * {
-        display: block;
-        outline: none;
-        border: none;
-      }
-      .form_area .form_section .form_input form {
-        transition: all ease-in-out 0.3s;
-        transform: rotatey(0deg);
-      }
-      .form_area .form_section .form_input label {
-        font-size: 12px;
-        color: #ffffff82;
-        letter-spacing: -0.5px;
-      }
-      .form_area .form_section .form_input {
-        width: 100%;
-        padding: 20px 0;
-        perspective: 800px;
-      }
+            .form_area .form_section .form_input * {
+              display: block;
+              outline: none;
+              border: none;
+            }
+            .form_area .form_section .form_input form {
+              transition: all ease-in-out 0.3s;
+              transform: rotatey(0deg);
+            }
+            .form_area .form_section .form_input label {
+              font-size: 12px;
+              color: #ffffff82;
+              letter-spacing: -0.5px;
+            }
+            .form_area .form_section .form_input {
+              width: 100%;
+              padding: 20px 0;
+              perspective: 800px;
+            }
 
-      .form_area .form_section input[type="text"],
-      .form_area .form_section input[type="password"],
-      .form_area .form_section button[type="submit"] {
-        background-color: rgb(255 255 255 / 50%);
-        padding: 15px 5% 10px;
-        margin-bottom: 20px;
-        border-radius: 50px;
-        width: 90%;
-        font-size: 11px;
-      }
-      .form_area .form_section input[type="text"],
-      .form_area .form_section input[type="password"] {
-        padding-top: 1em;
-      }
-      .form_area .form_section button[type="submit"] {
-        background-color: #37425c;
-        color: #fff;
-        cursor: pointer;
-        width: 100%;
-        font-size: 12px;
-        letter-spacing: 0;
-      }
-      .form_area .form_section .form_ck {
-        display: flex;
-        align-content: center;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 10px;
-        margin-bottom: 10px;
-      }
-      .form_area .form_section .form_ck * {
-        margin: 0;
-        width: initial;
-        display: inline-block;
-      }
-      .form_area .form_section .form_footer {
-        text-align: center;
-        padding: 30px 0;
-        border-top: 1px solid #ffffff82;
-        color: #ffffff82;
-      }
-      .form_area .form_section .form_footer a {
-        font-size: 12px;
-        cursor: pointer;
-        padding: 1em 2em;
-      }
-      @media (max-width: 425px) {
-        .form_area .form_section {
-          width: 90%;
-          padding: 30px 5%;
-        }
-      }
+            .form_area .form_section input[type="text"],
+            .form_area .form_section input[type="password"],
+            .form_area .form_section button[type="submit"] {
+              background-color: rgb(255 255 255 / 50%);
+              padding: 15px 5% 10px;
+              margin-bottom: 20px;
+              border-radius: 50px;
+              width: 90%;
+              font-size: 11px;
+            }
+            .form_area .form_section input[type="text"],
+            .form_area .form_section input[type="password"] {
+              padding-top: 1em;
+            }
+            .form_area .form_section button[type="submit"] {
+              background-color: #37425c;
+              color: #fff;
+              cursor: pointer;
+              width: 100%;
+              font-size: 12px;
+              letter-spacing: 0;
+            }
+            .form_area .form_section .form_ck {
+              display: flex;
+              align-content: center;
+              align-items: center;
+              justify-content: flex-start;
+              gap: 10px;
+              margin-bottom: 10px;
+            }
+            .form_area .form_section .form_ck * {
+              margin: 0;
+              width: initial;
+              display: inline-block;
+            }
+            .form_area .form_section .form_footer {
+              text-align: center;
+              padding: 30px 0;
+              border-top: 1px solid #ffffff82;
+              color: #ffffff82;
+            }
+            .form_area .form_section .form_footer a {
+              font-size: 12px;
+              cursor: pointer;
+              padding: 1em 2em;
+            }
+            @media (max-width: 425px) {
+              .form_area .form_section {
+                width: 90%;
+                padding: 30px 5%;
+              }
+            }
     </style>
     <script>
       function toggle_nav(nav) {
