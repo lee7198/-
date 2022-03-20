@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
     <title>LIKELION 2Week</title>
     <style>
       @font-face {
@@ -20,6 +23,7 @@
       body {
         width: 100%;
         height: 100vh;
+        overflow: hidden;
         background-color: #babec5;
         display: flex;
         justify-content: center;
@@ -27,7 +31,8 @@
       }
 
       .form_area {
-        width: 300px;
+        width: 100%;
+        max-width: 450px;
         background: url("/img/bg_01.jpg");
         background-repeat: no-repeat;
         background-size: cover;
@@ -39,11 +44,11 @@
       .form_area .form_section {
         background-color: rgb(137 159 188 / 80%);
         width: 80%;
-        height: 500px;
+        min-height: 500px;
         padding: 30px 10%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
       }
       .form_area .form_section .form_nav {
         /* margin-bottom: 30px; */
@@ -51,11 +56,11 @@
       }
       .form_area .form_section .form_nav li {
         display: inline-block;
-        margin-right: 0.6em;
-        letter-spacing: -0.1em;
-        font-weight: bold;
+        margin-right: 10px;
+        letter-spacing: 0.5px;
         color: #ffffff82;
         cursor: pointer;
+        font-size: 20px;
       }
 
       .form_area .form_section .form_nav li.active {
@@ -68,40 +73,50 @@
         outline: none;
         border: none;
       }
+      .form_area .form_section .form_input form {
+        transition: all ease-in-out 0.3s;
+        transform: rotatey(0deg);
+      }
       .form_area .form_section .form_input label {
-        font-size: 6px;
+        font-size: 12px;
         color: #ffffff82;
-        letter-spacing: -0.05em;
+        letter-spacing: -0.5px;
       }
       .form_area .form_section .form_input {
         width: 100%;
         padding: 20px 0;
+        perspective: 800px;
       }
 
-      .form_area .form_section input,
-      .form_area .form_section button {
+      .form_area .form_section input[type="text"],
+      .form_area .form_section input[type="password"],
+      .form_area .form_section button[type="submit"] {
         background-color: rgb(255 255 255 / 50%);
-        padding: 0.8em 5%;
-        margin-bottom: 1em;
+        padding: 15px 5% 10px;
+        margin-bottom: 20px;
         border-radius: 50px;
+        width: 90%;
+        font-size: 11px;
       }
       .form_area .form_section input[type="text"],
       .form_area .form_section input[type="password"] {
-        padding-top: 0.8em;
-        width: 90%;
-        font-size: 11px;
+        padding-top: 1em;
       }
       .form_area .form_section button[type="submit"] {
         background-color: #37425c;
         color: #fff;
         cursor: pointer;
         width: 100%;
+        font-size: 12px;
+        letter-spacing: 0;
       }
       .form_area .form_section .form_ck {
         display: flex;
         align-content: center;
-        gap: 0.5em;
-        margin-bottom: 0.5em;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        margin-bottom: 10px;
       }
       .form_area .form_section .form_ck * {
         margin: 0;
@@ -115,10 +130,15 @@
         color: #ffffff82;
       }
       .form_area .form_section .form_footer a {
-        font-size: 9px;
-        font-weight: bold;
+        font-size: 12px;
         cursor: pointer;
         padding: 1em 2em;
+      }
+      @media (max-width: 425px) {
+        .form_area .form_section {
+          width: 90%;
+          padding: 30px 5%;
+        }
       }
     </style>
     <script>
@@ -127,15 +147,25 @@
           case 1: {
             document.getElementById("signup_btn").classList.remove("active");
             document.getElementById("signin_btn").classList.add("active");
-            document.getElementById("signup").style.display = "none";
-            document.getElementById("signin").style.display = "block";
+            document.getElementById("signup").style.transform =
+              "rotatey(-90deg)";
+            document.getElementById("signin").style.transform = "rotatey(0deg)";
+            setTimeout(function () {
+              document.getElementById("signin").style.display = "block";
+              document.getElementById("signup").style.display = "none";
+            }, 350);
             break;
           }
           case 2: {
             document.getElementById("signin_btn").classList.remove("active");
             document.getElementById("signup_btn").classList.add("active");
-            document.getElementById("signin").style.display = "none";
-            document.getElementById("signup").style.display = "block";
+            document.getElementById("signin").style.transform =
+              "rotatey(90deg)";
+            document.getElementById("signup").style.transform = "rotatey(0deg)";
+            setTimeout(function () {
+              document.getElementById("signin").style.display = "none";
+              document.getElementById("signup").style.display = "block";
+            }, 350);
             break;
           }
         }
@@ -168,7 +198,7 @@
             </div>
             <button type="submit">Login</button>
           </form>
-          <div id="signup" style="display: none">
+          <form id="signup" style="display: none; transform: rotateY(90deg)">
             <label for="id">USERNAME</label>
             <input name="id" type="text" />
             <label for="pw">PASSWORD</label>
@@ -178,7 +208,7 @@
             <label for="mail">EMAIL ADDRESS</label>
             <input name="mail" type="text" />
             <button type="submit">SIGN UP</button>
-          </div>
+          </form>
         </div>
         <div class="form_footer">
           <a> Forgot Password?</a>
