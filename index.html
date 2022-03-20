@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LIKELION 2Week</title>
+    <style>
+      @font-face {
+        font-family: "Cafe24SsurroundAir";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff")
+          format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+      * {
+        font-family: "Cafe24SsurroundAir";
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        width: 100%;
+        height: 100vh;
+        background-color: #babec5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .form_area {
+        width: 300px;
+        background: url("/img/bg01.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        box-shadow: 3px 4px 6px #00000047;
+      }
+
+      .form_area .form_section {
+        background-color: rgb(137 159 188 / 80%);
+        width: 80%;
+        height: 500px;
+        padding: 30px 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .form_area .form_section .form_nav {
+        /* margin-bottom: 30px; */
+        padding: 10px 0;
+      }
+      .form_area .form_section .form_nav li {
+        display: inline-block;
+        margin-right: 0.6em;
+        letter-spacing: -0.1em;
+        font-weight: bold;
+        color: #ffffff82;
+        cursor: pointer;
+      }
+
+      .form_area .form_section .form_nav li.active {
+        border-bottom: 2px solid #37425c;
+        color: #fff;
+      }
+
+      .form_area .form_section .form_input * {
+        display: block;
+        outline: none;
+        border: none;
+      }
+      .form_area .form_section .form_input label {
+        font-size: 6px;
+        color: #ffffff82;
+        letter-spacing: -0.05em;
+      }
+      .form_area .form_section .form_input {
+        width: 100%;
+        padding: 20px 0;
+      }
+
+      .form_area .form_section input,
+      .form_area .form_section button {
+        background-color: rgb(255 255 255 / 50%);
+        padding: 0.8em 5%;
+        margin-bottom: 1em;
+        border-radius: 50px;
+      }
+      .form_area .form_section input[type="text"],
+      .form_area .form_section input[type="password"] {
+        padding-top: 0.8em;
+        width: 90%;
+        font-size: 11px;
+      }
+      .form_area .form_section button[type="submit"] {
+        background-color: #37425c;
+        color: #fff;
+        cursor: pointer;
+        width: 100%;
+      }
+      .form_area .form_section .form_ck {
+        display: flex;
+        align-content: center;
+        gap: 0.5em;
+        margin-bottom: 0.5em;
+      }
+      .form_area .form_section .form_ck * {
+        margin: 0;
+        width: initial;
+        display: inline-block;
+      }
+      .form_area .form_section .form_footer {
+        text-align: center;
+        padding: 30px 0;
+        border-top: 1px solid #ffffff82;
+        color: #ffffff82;
+      }
+      .form_area .form_section .form_footer a {
+        font-size: 9px;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 1em 2em;
+      }
+    </style>
+    <script>
+      function toggle_nav(nav) {
+        switch (nav) {
+          case 1: {
+            document.getElementById("signup_btn").classList.remove("active");
+            document.getElementById("signin_btn").classList.add("active");
+            document.getElementById("signup").style.display = "none";
+            document.getElementById("signin").style.display = "block";
+            break;
+          }
+          case 2: {
+            document.getElementById("signin_btn").classList.remove("active");
+            document.getElementById("signup_btn").classList.add("active");
+            document.getElementById("signin").style.display = "none";
+            document.getElementById("signup").style.display = "block";
+            break;
+          }
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="form_area">
+      <div class="form_section">
+        <div class="form_nav">
+          <ul>
+            <li onclick="toggle_nav(1);" id="signin_btn" class="nav_btn active">
+              SIGN IN
+            </li>
+            <li onclick="toggle_nav(2);" id="signup_btn" class="nav_btn">
+              SIGN UP
+            </li>
+          </ul>
+        </div>
+        <div class="form_input">
+          <form id="signin">
+            <label for="id">USERNAME</label>
+            <input name="id" type="text" />
+            <label for="pw">PASSWORD</label>
+            <input name="pw" type="password" />
+            <div class="form_ck">
+              <input name="keep" type="checkbox" />
+              <label for="keep">Keep me Signed in</label>
+            </div>
+            <button type="submit">Login</button>
+          </form>
+          <div id="signup" style="display: none">
+            <label for="id">USERNAME</label>
+            <input name="id" type="text" />
+            <label for="pw">PASSWORD</label>
+            <input name="pw" type="password" />
+            <label for="pw2">REPEAT PASSWORD</label>
+            <input name="pw2" type="password" />
+            <label for="mail">EMAIL ADDRESS</label>
+            <input name="mail" type="text" />
+            <button type="submit">SIGN UP</button>
+          </div>
+        </div>
+        <div class="form_footer">
+          <a> Forgot Password?</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
