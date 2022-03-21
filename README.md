@@ -109,9 +109,10 @@ alert("Hello Lion!");
 * https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/
 * https://www.w3schools.com/js/js_htmldom.asp
 
- 
+* * *
+* * *
 
-week_1
+week_2
 ======
 ### CSS로 Login Form 구성하기
  [실습물](https://lee7198.github.io/LikeLion/week2/)
