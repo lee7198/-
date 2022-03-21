@@ -1,7 +1,8 @@
 🦁 멋쟁이 사자처럼 10기
 ===============
-
 > 계명대학교 전공반 이도경
+
+[실습물](https://lee7198.github.io/LikeLion/)
 
 * [1주차 프론트엔트 과제물 ](#week_1)
   * HTML, CSS, Javascript 란?
