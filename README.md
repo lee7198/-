@@ -13,6 +13,11 @@
   * github 계정만들기
   * README.md 파일에 정리하고 github에 올리기
 
+
+* [2주차 프론트엔트 과제물 ](#week_2)
+  * CSS로 Login Form 구성하기
+  * Bootstrap 사용하여 UI 구성하기
+
 week_1
 ======
 ### HTML, CSS, Javascript 란?
@@ -103,3 +108,12 @@ alert("Hello Lion!");
 ###### 이미지 출처
 * https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/
 * https://www.w3schools.com/js/js_htmldom.asp
+
+ 
+
+week_1
+======
+### CSS로 Login Form 구성하기
+ [실습물](https://lee7198.github.io/LikeLion/week2/)
+### Bootstrap 사용하여 UI 구성하기
+ [실습물](https://lee7198.github.io/LikeLion/week2-2/)
