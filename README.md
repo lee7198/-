@@ -8,11 +8,6 @@
   * 브라우저의 동작 방식에 대해서
   * DOM에 대해서
   * HTTP, HTTPS에 대해서
-* 공통
-  * git 사용해보기 
-  * github 계정만들기
-  * README.md 파일에 정리하고 github에 올리기
-
 
 * [2주차 프론트엔트 과제물 ](#week_2)
   * CSS로 Login Form 구성하기
