@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>week3-1</title>
+</head>
+
+<body>
+  <button>click</button>
+  <input type="button" value="hello!!!!" />
+</body>
+
+<script>
+let btn = document.querySelector("button");
+
+function nice() {
+  alert("OK!");
+}
+btn.addEventListener("click", nice);
+
+let btn2 = document.querySelector('input[type="button"]');
+btn2.addEventListener("click", function() {
+  alert(btn2.value);
+  btn2.value = "안녕하세요!!!";
+});
+</script>
+
+</html>
