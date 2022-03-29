@@ -11,5 +11,8 @@
   * HTTP, HTTPS에 대해서
 
 * [2주차 프론트엔트 과제물 ](https://github.com/lee7198/LikeLion/blob/main/cs/week2.md)
-  * CSS로 Login Form 구성하기
+  * Ajax란
+  * 반응형 디자인이란
+  
+  * * CSS로 Login Form 구성하기
   * Bootstrap 사용하여 UI 구성하기
