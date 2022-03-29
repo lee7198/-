@@ -14,5 +14,5 @@
   * Ajax란
   * 반응형 디자인이란
   
-  * * CSS로 Login Form 구성하기
+  * CSS로 Login Form 구성하기
   * Bootstrap 사용하여 UI 구성하기
