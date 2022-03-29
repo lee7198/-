@@ -33,3 +33,9 @@ week_2
 	} 
 }
 ```
+
+![반응형 웹](/img/responsive-web.jpeg)
+
+
+###### 이미지 출처
+* https://blog.helloweb.co.kr/hello-web-ecommerce-responsive-web/
