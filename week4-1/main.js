@@ -1,11 +1,10 @@
 init();
 let badgeStatus = false;
-let Data;
 let jsonArray = [];
 let TodoCount = 0;
+let indexObject = 0;
 let UndefinedTodo = 0;
 let SucceedList = 0;
-let loadOnce = false;
 
 const url = new URL(window.location.href);
 const urlParams = url.searchParams;
@@ -32,10 +31,10 @@ function loadTodo() {
     jsonArray = JSON.parse(localStorage.getItem("jsonArray"));
 
     for (let i = 0; i < jsonArray.length; i++) {
+      indexObject++;
       if (jsonArray) TodoCount = jsonArray.length;
       addTask(jsonArray[i]);
       if (jsonArray[i].isDel) ++UndefinedTodo;
-
       if (jsonArray[i].isDo) ++SucceedList;
       updateCount();
     }
@@ -62,7 +61,7 @@ function addToDo(e) {
     let jsonObj = new Object();
     var date = new Date();
 
-    jsonObj.idx = TodoCount++;
+    jsonObj.idx = indexObject++;
     jsonObj.value = toDoValue.value;
     jsonObj.date = date.toLocaleString();
     jsonObj.isDo = false;
