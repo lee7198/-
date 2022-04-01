@@ -38,38 +38,39 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-.cont_btn a {
-  max-height: 16px;
-  font-size: 16px;
+.cont_btn button {
+  height: 34px;
+  font-size: 14px;
   display: inline-block;
-  padding: 5px 1.2em;
+  padding: 3px 1.2em;
   background-color: #fff;
   border-radius: 30px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.08);
   cursor: pointer;
   color: #333;
   text-decoration: none;
+  border: none;
 }
-.cont_btn a.emoji {
+.cont_btn button.emoji {
   padding: 4px 1.2em 6px;
 }
-.cont_btn a.active {
+.cont_btn button.active {
   background-color: #222;
   color: #fff;
 }
-.cont_btn a.clearAll {
+.cont_btn button.clearAll {
   color: rgb(241, 75, 75);
 }
-.cont_btn a:hover,
-.cont_btn a:active {
+.cont_btn button:hover,
+.cont_btn button:active {
   background-color: rgb(241, 241, 241);
 }
-.cont_btn a.active:hover,
-.cont_btn a.active:active {
+.cont_btn button.active:hover,
+.cont_btn button.active:active {
   background-color: rgb(101, 101, 101);
 }
-.cont_btn a.clearAll:hover,
-.cont_btn a.clearAll:active {
+.cont_btn button.clearAll:hover,
+.cont_btn button.clearAll:active {
   background-color: rgb(244, 230, 230);
 }
 .cont.header {
@@ -191,7 +192,7 @@ ul {
   .cont * {
     /* font-size: 0.8em; */
   }
-  .cont_btn a {
+  .cont_btn button {
     /* font-size: 1em; */
   }
   .cont.list .li_date * {
