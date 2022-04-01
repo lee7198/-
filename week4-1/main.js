@@ -4,6 +4,7 @@ let Data;
 let jsonArray = [];
 let TodoCount = 0;
 let UndefinedTodo = 0;
+let SucceedList = 0;
 let loadOnce = false;
 
 const url = new URL(window.location.href);
@@ -33,9 +34,9 @@ function loadTodo() {
     for (let i = 0; i < jsonArray.length; i++) {
       if (jsonArray) TodoCount = jsonArray.length;
       addTask(jsonArray[i]);
-      if (jsonArray[i].isDel) {
-        ++UndefinedTodo;
-      }
+      if (jsonArray[i].isDel) ++UndefinedTodo;
+
+      if (jsonArray[i].isDo) ++SucceedList;
       updateCount();
     }
   }
@@ -97,10 +98,7 @@ function addTask(Todo) {
     </h4>
     <div class="li_date">
       <h5>${Todo.date}</h5>
-      <div>
         <a id="delete_${Todo.idx}" onclick="deleteTodo(${Todo.idx})">delete</a>
-        <a>edit</a>
-      </div>
     </div>
   </div>
 </div>`;
@@ -133,7 +131,7 @@ function badgeHiding() {
 }
 
 function updateCount() {
-  TodoCount = jsonArray.length - UndefinedTodo;
+  TodoCount = jsonArray.length - UndefinedTodo - SucceedList;
   if (TodoCount >= 10) {
     document.getElementById("badge").innerHTML = "9+";
   } else {
