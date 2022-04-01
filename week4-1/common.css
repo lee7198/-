@@ -17,11 +17,49 @@ body {
 .cont {
   width: 90%;
   max-width: 540px;
-  margin: 30px auto;
+  margin: 30px auto 0px;
   padding: 20px 20px;
   background-color: #fff;
   border-radius: 13px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.075);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.08),
+    inset 0px -2px 3px rgb(0 0 0 / 8%);
+}
+.cont_btn {
+  width: 90%;
+  max-width: 580px;
+  margin: 30px auto 0px;
+  padding: 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cont_btn a {
+  padding: 0.5em 1em;
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  color: #333;
+  text-decoration: none;
+}
+.cont_btn a.active {
+  background-color: #222;
+  color: #fff;
+}
+.cont_btn a.clearAll {
+  color: rgb(241, 75, 75);
+}
+.cont_btn a:hover,
+.cont_btn a:active {
+  background-color: rgb(241, 241, 241);
+}
+.cont_btn a.active:hover,
+.cont_btn a.active:active {
+  background-color: rgb(101, 101, 101);
+}
+.cont_btn a.clearAll:hover,
+.cont_btn a.clearAll:active {
+  background-color: rgb(244, 230, 230);
 }
 .cont.header {
   height: 45px;
@@ -58,7 +96,7 @@ body {
 .cont form input[type="text"] {
   padding: 0 0.8em;
   width: 100%;
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid rgb(193, 193, 193);
 }
 .cont form input[type="submit"] {
   padding: 0.5em 2em;
@@ -118,4 +156,18 @@ body {
 .cont.list .li_sus:active {
   border: 1px solid rgb(221, 221, 221);
   background-color: rgb(244, 244, 244);
+}
+.cont.list .li_sus.checked {
+  border: 7px solid rgb(171 210 165);
+}
+.cont.list .li_sus.checked:hover,
+.cont.list .li_sus.checked:active {
+  border: 7px solid rgb(114, 182, 103);
+  background-color: #fff;
+}
+
+ul {
+  display: flex;
+  flex-direction: column-reverse;
+  padding-bottom: 100px;
 }

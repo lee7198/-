@@ -8,17 +8,26 @@
     <link href="./common.css" rel="stylesheet" type="text/css" />
     <title>Todo list</title>
     <script src="./TodoList.json" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   </head>
   <body>
     <div class="cont header">
       <h2 class="title">My To Do List</h2>
-      <div id="badge" style="display: none; transform: scale(0)">0</div>
+      <div id="badge" style="transform: scale(0)">0</div>
     </div>
-    <div class="cont" style="display: sticky; top: 0">
-      <form>
-        <input type="text" placeholder="Enter My List" />
+    <div class="cont">
+      <form onsubmit="true;">
+        <input type="text" id="todoInput" placeholder="Enter My List" />
         <input type="submit" value="Add" />
       </form>
+    </div>
+    <div class="cont_btn">
+      <div>
+        <a id="all_btn" class="" href="./index.html">All</a>
+        <a id="succ_btn" href="./index.html?view=succeed">Succeed</a>
+        <a id="not_btn" href="./index.html?view=not">Not yet</a>
+      </div>
+      <a class="clearAll" onclick="clearAll()">Clear All</a>
     </div>
     <ul class=""></ul>
     <script type="text/JavaScript" src="./main.js"></script>
