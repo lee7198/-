@@ -30,7 +30,7 @@ body {
 }
 .cont_btn {
   width: 80%;
-  max-width: 540px;
+  max-width: 580px;
   margin: 30px auto 0px;
   padding: 20px 0%;
   display: flex;
@@ -38,8 +38,8 @@ body {
   justify-content: space-between;
 }
 .cont_btn a {
-  font-size: 0.9em;
-  padding: 0.5em 1em;
+  display: inline-block;
+  padding: 0.5em 1.2em;
   background-color: #fff;
   border-radius: 30px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.08);
@@ -132,9 +132,13 @@ body {
 .cont.list .li_date {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   color: #777;
   text-align: right;
   font-size: 0.9em;
+}
+.cont.list .li_date h5 {
+  text-align: left;
 }
 .cont.list .li_date a {
   display: inline-block;
@@ -182,6 +186,9 @@ ul {
     /* font-size: 0.8em; */
   }
   .cont_btn a {
+    /* font-size: 1em; */
+  }
+  .cont.list .li_date * {
     font-size: 0.7em;
   }
 }
