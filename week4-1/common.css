@@ -11,6 +11,10 @@
   margin: 0;
   font-family: "NEXON Lv1 Gothic OTF";
 }
+input {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}
 body {
   background-color: rgb(241, 241, 241);
 }
@@ -18,7 +22,7 @@ body {
   width: 80%;
   max-width: 540px;
   margin: 30px auto 0px;
-  padding: 20px 20px;
+  padding: 20px 5%;
   background-color: #fff;
   border-radius: 13px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.08),
@@ -26,14 +30,15 @@ body {
 }
 .cont_btn {
   width: 80%;
-  max-width: 580px;
+  max-width: 540px;
   margin: 30px auto 0px;
-  padding: 10px 0px;
+  padding: 20px 0%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .cont_btn a {
+  font-size: 0.9em;
   padding: 0.5em 1em;
   background-color: #fff;
   border-radius: 30px;
@@ -72,8 +77,8 @@ body {
   content: "3";
   display: inline-block;
   position: relative;
-  top: -60px;
-  right: -101%;
+  top: -72px;
+  right: -104%;
   width: 26px;
   height: 25px;
   line-height: 26px;
@@ -92,6 +97,7 @@ body {
 .cont form input {
   border: none;
   outline: none;
+  border-radius: 0;
 }
 .cont form input[type="text"] {
   padding: 0 0.8em;
@@ -103,7 +109,7 @@ body {
   margin-left: 0.5em;
   background-color: rgb(39, 39, 39);
   color: #fff;
-  border-radius: 3px;
+  border-radius: 0;
   cursor: pointer;
 }
 
@@ -170,4 +176,12 @@ ul {
   display: flex;
   flex-direction: column-reverse;
   padding-bottom: 100px;
+}
+@media screen and (max-width: 768px) {
+  .cont * {
+    font-size: 0.8em;
+  }
+  .cont_btn a {
+    font-size: 0.7em;
+  }
 }

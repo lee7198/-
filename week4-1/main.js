@@ -18,7 +18,7 @@ $(document).ready(function () {
   if ($("ul").height() <= 0) {
     let ul = document.querySelector("ul");
     let div = document.createElement("div");
-    div.innerHTML = `<div class="cont_btn" style="justify-content: center;">Can not found the list. 😥</div>`;
+    div.innerHTML = `<div class="cont_btn" style="justify-content: center;">Can not find the list. 😥</div>`;
     ul.appendChild(div);
   }
 });
@@ -43,7 +43,7 @@ function loadTodo() {
 }
 
 function deleteTodo(num) {
-  if (confirm("정말 삭제하시겠습니까??") == true) {
+  if (confirm("Are you sure that?????") == true) {
     let getData = JSON.parse(localStorage.getItem("jsonArray"));
     getData[num].isDel = true;
     localStorage.setItem("jsonArray", JSON.stringify(getData));
@@ -162,8 +162,10 @@ function Doit(num) {
 }
 
 function clearAll() {
-  localStorage.removeItem("jsonArray");
-  window.location.reload();
+  if (confirm("Are you sure that?????") == true) {
+    localStorage.removeItem("jsonArray");
+    window.location.reload();
+  }
 }
 
 function switchMenu() {
