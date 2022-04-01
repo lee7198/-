@@ -17,6 +17,7 @@ input {
 }
 body {
   background-color: rgb(241, 241, 241);
+  overflow-x: hidden;
 }
 .cont {
   width: 80%;
@@ -38,14 +39,19 @@ body {
   justify-content: space-between;
 }
 .cont_btn a {
+  max-height: 16px;
+  font-size: 16px;
   display: inline-block;
-  padding: 0.5em 1.2em;
+  padding: 5px 1.2em;
   background-color: #fff;
   border-radius: 30px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.08);
   cursor: pointer;
   color: #333;
   text-decoration: none;
+}
+.cont_btn a.emoji {
+  padding: 4px 1.2em 6px;
 }
 .cont_btn a.active {
   background-color: #222;
@@ -109,7 +115,7 @@ body {
   margin-left: 0.5em;
   background-color: rgb(39, 39, 39);
   color: #fff;
-  border-radius: 0;
+  border-radius: 3px;
   cursor: pointer;
 }
 
