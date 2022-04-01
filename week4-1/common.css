@@ -78,7 +78,7 @@ body {
   display: inline-block;
   position: relative;
   top: -72px;
-  right: -104%;
+  right: -100%;
   width: 26px;
   height: 25px;
   line-height: 26px;
@@ -179,7 +179,7 @@ ul {
 }
 @media screen and (max-width: 768px) {
   .cont * {
-    font-size: 0.8em;
+    /* font-size: 0.8em; */
   }
   .cont_btn a {
     font-size: 0.7em;
