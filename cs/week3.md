@@ -3,7 +3,7 @@
 ### Bootstrap 사용하여 UI 구성하기
  [실습물](https://lee7198.github.io/LikeLion/week3-2/)
 
-## 이벤트 버블링이란
+- 이벤트 버블링이란
 
 이벤트 버블링은 예를 들어 DOM 객체의 자식 노드에서 이벤트 발생 시 부모 노드로 이벤트 요소들이 전달되어 가는 특성을 의미합니다.
 
@@ -21,7 +21,7 @@
 
 e.stopPropagation() 함수를 통해 버블링을 중단할 수 있습니다.
 
-# 쉐도우 DOM 이란?
+- 쉐도우 DOM 이란?
 
 쉐도우 DOM은 DOM 구조를 지니고 있으나, 외부의 노출되지 않은 DOM을 의미하고, DOM의 구조를 캡슐화, 동작을 숨기는 등 다른 코드와의 충돌을 막기위한 분리 등으로 쓰입니다.
 
@@ -36,3 +36,8 @@ e.stopPropagation() 함수를 통해 버블링을 중단할 수 있습니다.
 - **Shadow tree**: shadow DOM 내부의 DOM 트리.
 - **Shadow boundary**: shadow DOM이 끝나고, 통상적인 DOM이 시작되는 장소.
 - **Shadow root**: shadow 트리의 root 노드.
+
+
+###### 이미지 출처
+* https://www.howdy-mj.me/dom/event-capturing-and-bubbling/
+* https://developer.mozilla.org/ko/docs/Web/Web_Components/Using_shadow_DOM
