@@ -1,5 +1,4 @@
 init();
-loadTodo();
 let badgeStatus = false;
 let jsonArray = [];
 let TodoCount = 0;
@@ -7,6 +6,7 @@ let indexObject = 0;
 let UndefinedTodo = 0;
 let SucceedList = 0;
 //각종 초기변수 세팅
+loadTodo();
 
 const url = new URL(window.location.href);
 const urlParams = url.searchParams;
