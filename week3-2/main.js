@@ -1,15 +1,16 @@
 init();
+loadTodo();
 let badgeStatus = false;
 let jsonArray = [];
 let TodoCount = 0;
 let indexObject = 0;
 let UndefinedTodo = 0;
 let SucceedList = 0;
+//각종 초기변수 세팅
 
 const url = new URL(window.location.href);
 const urlParams = url.searchParams;
-
-loadTodo();
+//파마메터 작업을 위한 상수
 
 $(document).ready(function () {
   document.getElementById("todoInput").focus();
@@ -21,10 +22,12 @@ $(document).ready(function () {
     ul.appendChild(div);
   }
 });
+//도큐멘트 레디 이벤트 시 작동이벤트
 
 function init() {
   document.querySelector("form").addEventListener("submit", addToDo);
 }
+//초기화
 
 function loadTodo() {
   if (JSON.parse(localStorage.getItem("jsonArray"))) {
@@ -40,6 +43,7 @@ function loadTodo() {
     }
   }
 }
+//list 불러오기
 
 function deleteTodo(num) {
   if (confirm("Are you sure that?????") == true) {
@@ -53,6 +57,7 @@ function deleteTodo(num) {
   }
   window.location.reload();
 }
+//리스트 삭제 (삭제는 아니고 일부 속성으로 숨김)
 
 function addToDo(e) {
   //새로운 할 일 추가하는 경우
@@ -79,6 +84,7 @@ function addToDo(e) {
     // loadTodo();
   }
 }
+//추가 이벤트
 
 function addTask(Todo) {
   let Doit;
@@ -104,6 +110,7 @@ function addTask(Todo) {
     ul.appendChild(li);
   }
 }
+//리스트 html 문서로 삽입하기
 
 function badgeShowing() {
   if (TodoCount !== 0) {
@@ -116,6 +123,7 @@ function badgeShowing() {
     }
   }
 }
+//뱃지 이벤트
 
 function badgeHiding() {
   if (TodoCount == 0) {
@@ -128,6 +136,7 @@ function badgeHiding() {
     }
   }
 }
+//뱃지 이벤트
 
 function updateCount() {
   TodoCount = jsonArray.length - UndefinedTodo - SucceedList;
@@ -142,6 +151,7 @@ function updateCount() {
     badgeHiding();
   }
 }
+//뱃지 이벤트
 
 function Doit(num) {
   let getItem = document.getElementById("list_" + num);
@@ -159,6 +169,7 @@ function Doit(num) {
   }
   window.location.reload();
 }
+//TOdo 상태 변경
 
 function clearAll() {
   if (confirm("Are you sure that?????") == true) {
@@ -166,6 +177,7 @@ function clearAll() {
     window.location.reload();
   }
 }
+//리스트 모두 삭제 (로컬 저장)
 
 function switchMenu() {
   if (urlParams.get("view") == "succeed") {
@@ -184,3 +196,4 @@ function switchMenu() {
     $(".list").css("display", "flex");
   }
 }
+//파라메터 값 받아서 메뉴 변경
