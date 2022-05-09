@@ -1,0 +1,205 @@
+@font-face {
+  font-family: "NEXON Lv1 Gothic OTF";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-family: "NEXON Lv1 Gothic OTF";
+}
+input {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}
+body {
+  background-color: rgb(241, 241, 241);
+  overflow-x: hidden;
+}
+.cont {
+  width: 80%;
+  max-width: 540px;
+  margin: 30px auto 0px;
+  padding: 20px 5%;
+  background-color: #fff;
+  border-radius: 13px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.08),
+    inset 0px -2px 3px rgb(0 0 0 / 8%);
+}
+.cont_btn {
+  width: 80%;
+  max-width: 580px;
+  margin: 30px auto 0px;
+  padding: 20px 0%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cont_btn .tab_btn {
+  height: 34px;
+  line-height: 34px;
+  font-size: 14px;
+  display: inline-block;
+  padding: 3px 1.5em;
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  color: #333;
+  text-decoration: none;
+  border: none;
+}
+.cont_btn Button {
+  line-height: 0 !important;
+}
+.cont_btn .tab_btn.emoji {
+  /* padding: 4px 1.2em 6px; */
+}
+.cont_btn .tab_btn.active {
+  background-color: #222;
+  color: #fff;
+}
+.cont_btn .tab_btn.clearAll {
+  color: rgb(241, 75, 75);
+}
+.cont_btn .tab_btn:hover,
+.cont_btn .tab_btn:active {
+  background-color: rgb(241, 241, 241);
+}
+.cont_btn .tab_btn.active:hover,
+.cont_btn .tab_btn.active:active {
+  background-color: rgb(101, 101, 101);
+}
+.cont_btn .tab_btn.clearAll:hover,
+.cont_btn .tab_btn.clearAll:active {
+  background-color: rgb(244, 230, 230);
+}
+.cont.header {
+  height: 45px;
+  line-height: 45px;
+}
+.cont .title {
+  text-align: center;
+}
+.cont.header #badge {
+  content: "3";
+  display: inline-block;
+  position: relative;
+  top: -72px;
+  right: -100%;
+  width: 26px;
+  height: 25px;
+  line-height: 26px;
+  padding-top: 1px;
+  border-radius: 50%;
+  background-color: rgb(248, 83, 83);
+  color: white;
+  text-align: center;
+  transition: all cubic-bezier(0.67, -0.15, 0.08, 1.53) 0.2s;
+}
+.cont form {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.cont form input {
+  border: none;
+  outline: none;
+  border-radius: 0;
+}
+.cont form input[type="text"] {
+  padding: 0 0.8em;
+  width: 100%;
+  border-bottom: 1px solid rgb(193, 193, 193);
+}
+.cont form input[type="submit"] {
+  padding: 0.5em 2em;
+  margin-left: 0.5em;
+  background-color: rgb(39, 39, 39);
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.cont form input[type="submit"]:hover,
+.cont form input[type="submit"]:active {
+  background-color: rgb(74, 74, 74);
+}
+
+.cont.list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cont.list .li_info {
+  width: inherit;
+}
+.cont.list .li_title {
+  margin: 0.2em 0;
+}
+.cont.list .li_date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #777;
+  text-align: right;
+  font-size: 0.9em;
+}
+.cont.list .li_date h5 {
+  text-align: left;
+}
+.cont.list .li_date a {
+  display: inline-block;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.cont.list .li_date a:hover,
+.cont.list .li_date a:active {
+  color: #444;
+  text-decoration: underline;
+}
+.cont.list .li_sus {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 15px;
+  border-radius: 50%;
+  border: 1px solid rgb(185, 185, 185);
+  background-color: #fff;
+  font-size: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.cont.list .li_sus:hover,
+.cont.list .li_sus:active {
+  border: 1px solid rgb(221, 221, 221);
+  background-color: rgb(244, 244, 244);
+}
+.cont.list .li_sus.checked {
+  border: 7px solid rgb(171 210 165);
+}
+.cont.list .li_sus.checked:hover,
+.cont.list .li_sus.checked:active {
+  border: 7px solid rgb(114, 182, 103);
+  background-color: #fff;
+}
+
+ul {
+  display: flex;
+  flex-direction: column-reverse;
+  padding-bottom: 100px;
+}
+@media screen and (max-width: 768px) {
+  .cont * {
+    /* font-size: 0.8em; */
+  }
+  .cont_btn .tab_btn {
+    /* font-size: 1em; */
+  }
+  .cont.list .li_date * {
+    font-size: 0.7em;
+  }
+}

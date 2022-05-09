@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>Todo list</title>
+    <link href="./common.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="cont header">
+      <h2 class="title">My Second To Do List</h2>
+      <div id="badge" style="transform: scale(0)">0</div>
+    </div>
+    <div class="cont">
+      <form onsubmit="true;">
+        <input type="text" id="todoInput" placeholder="Enter My List" />
+        <input type="submit" value="Add" />
+      </form>
+    </div>
+    <div class="cont_btn">
+      <div>
+        <div id="all_btn" class="tab_btn">All</div>
+        <div id="succ_btn" class="emoji tab_btn">✅</div>
+        <div id="not_btn" class="emoji tab_btn">😐</div>
+      </div>
+      <button class="clearAll tab_btn" onclick="clearAll()">Clear</button>
+    </div>
+    <ul class=""></ul>
+    <script type="text/JavaScript" src="./main.js"></script>
+  </body>
+</html>
