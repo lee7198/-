@@ -32,10 +32,10 @@ function countUp() {
 }
 
 function formatter(a) {
-  let milliseconds = (a % 100).toString();
+  let milliseconds = Math.floor((a % 100).toString());
   let seconds = (((a - milliseconds) * 0.01) % 60).toString();
-  let minutes = (a / 6000).toFixed(0).toString();
-  let hours = (a / 360000).toFixed(0).toString();
+  let minutes = Math.floor((a / 6000).toString());
+  let hours = Math.floor((a / 360000).toString());
   if (minutes < 10) {
     minutes = "0" + minutes;
   }
@@ -47,28 +47,55 @@ function formatter(a) {
   display.innerHTML = returntime;
 }
 
+let timer = 0;
 let count2 = document.getElementById("count2");
 let reset2 = document.getElementById("reset2");
 
 let t_hours = document.getElementById("t_h");
 let t_minutes = document.getElementById("t_m");
 let t_seconds = document.getElementById("t_s");
-let timer;
+let timer_fn;
 
 let count_toggle2 = false;
 
 count2.addEventListener("click", function () {
   if (!count_toggle2) {
+    timer = t_hours.value * 3600 + t_minutes.value * 60 + t_seconds.value * 1;
+    timer_fn = setInterval(countDown, 1000);
     count2.innerHTML = "stop";
     count_toggle2 = true;
   } else {
+    clearInterval(timer_fn);
     count2.innerHTML = "set";
     count_toggle2 = false;
   }
 });
 
 reset2.addEventListener("click", function () {
-  t_hours.value = 00;
-  t_minutes.value = 00;
-  t_seconds.value = 00;
+  t_hours.value = 0;
+  t_minutes.value = 0;
+  t_seconds.value = 0;
+  clearInterval(timer_fn);
+  count2.innerHTML = "set";
+  count_toggle2 = false;
 });
+
+function formatter_timer(a) {
+  let hours = Math.floor(a / 3600);
+  let minutes = Math.floor(a / 60);
+  console.log(a, minutes);
+  let seconds = a % 60;
+  t_hours.value = hours;
+  t_minutes.value = minutes;
+  t_seconds.value = seconds;
+}
+
+function countDown() {
+  if (timer == 1) {
+    clearInterval(timer_fn);
+    alert("time out");
+  }
+  timer--;
+
+  formatter_timer(timer);
+}
