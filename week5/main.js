@@ -10,9 +10,11 @@ count.addEventListener("click", function () {
   if (!count_toggle) {
     interval = setInterval(countUp, 10);
     count.innerHTML = "stop";
+    count.classList.add("stop");
     count_toggle = true;
   } else {
     count.innerHTML = "count";
+    count.classList.remove("stop");
     clearInterval(interval);
     count_toggle = false;
   }
@@ -22,6 +24,7 @@ reset.addEventListener("click", function () {
   initTime = 0;
   display.innerHTML = "0:00:00:00";
   count.innerHTML = "count";
+  count.classList.remove("stop");
   clearInterval(interval);
   count_toggle = false;
 });
@@ -59,15 +62,22 @@ let timer_fn;
 let count_toggle2 = false;
 
 count2.addEventListener("click", function () {
-  if (!count_toggle2) {
-    timer = t_hours.value * 3600 + t_minutes.value * 60 + t_seconds.value * 1;
-    timer_fn = setInterval(countDown, 1000);
-    count2.innerHTML = "stop";
-    count_toggle2 = true;
+  if (t_hours.value < 0 || t_minutes.value < 0 || t_seconds.value < 0) {
+    alert("Please check the value");
   } else {
-    clearInterval(timer_fn);
-    count2.innerHTML = "set";
-    count_toggle2 = false;
+    if (!count_toggle2) {
+      timer_fn = setInterval(countDown, 1000);
+      count2.innerHTML = "stop";
+      count2.classList.add("stop");
+      count_toggle2 = true;
+      toggle_disable(true);
+    } else {
+      clearInterval(timer_fn);
+      count2.innerHTML = "set";
+      count2.classList.remove("stop");
+      count_toggle2 = false;
+      toggle_disable(false);
+    }
   }
 });
 
@@ -75,27 +85,77 @@ reset2.addEventListener("click", function () {
   t_hours.value = 0;
   t_minutes.value = 0;
   t_seconds.value = 0;
+
   clearInterval(timer_fn);
   count2.innerHTML = "set";
+  count2.classList.remove("stop");
+
   count_toggle2 = false;
+  toggle_disable(false);
 });
 
 function formatter_timer(a) {
-  let hours = Math.floor(a / 3600);
-  let minutes = Math.floor(a / 60);
-  console.log(a, minutes);
-  let seconds = a % 60;
-  t_hours.value = hours;
-  t_minutes.value = minutes;
-  t_seconds.value = seconds;
+  t_hours.value = Math.floor(a / 3600);
+  t_minutes.value = Math.floor((a - t_hours.value * 3600) / 60);
+  t_seconds.value = (a - t_hours.value * 3600 - t_minutes.value * 60) % 60;
 }
 
 function countDown() {
-  if (timer == 1) {
+  timer = t_hours.value * 3600 + t_minutes.value * 60 + t_seconds.value * 1;
+  console.log("timer is ", timer, " seconds");
+  if (timer <= 1) {
     clearInterval(timer_fn);
+    timer = 0;
     alert("time out");
+    toggle_disable(false);
+    count2.innerHTML = "set";
+    count2.classList.remove("stop");
+  } else {
+    timer--;
   }
-  timer--;
 
   formatter_timer(timer);
 }
+
+function toggle_disable(b) {
+  t_hours.disabled = b;
+  t_minutes.disabled = b;
+  t_seconds.disabled = b;
+}
+
+let t_hours_up = document.getElementById("t_h_u");
+let t_hours_down = document.getElementById("t_h_d");
+let t_minutes_up = document.getElementById("t_m_u");
+let t_minutes_down = document.getElementById("t_m_d");
+let t_seconds_up = document.getElementById("t_s_u");
+let t_seconds_down = document.getElementById("t_s_d");
+
+t_hours_up.addEventListener("click", function () {
+  t_hours.value++;
+});
+
+t_hours_down.addEventListener("click", function () {
+  if (t_hours.value > 0) {
+    t_hours.value--;
+  }
+});
+
+t_minutes_up.addEventListener("click", function () {
+  t_minutes.value++;
+});
+
+t_minutes_down.addEventListener("click", function () {
+  if (t_minutes.value > 0) {
+    t_minutes.value--;
+  }
+});
+
+t_seconds_up.addEventListener("click", function () {
+  t_seconds.value++;
+});
+
+t_seconds_down.addEventListener("click", function () {
+  if (t_seconds.value > 0) {
+    t_seconds.value--;
+  }
+});

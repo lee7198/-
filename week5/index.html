@@ -5,20 +5,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MY WATCH</title>
+    <link href="./common.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div>
+    <div id="center">
+      <h1>STOP WATCH</h1>
+      <div class="content">
+        <div class="display">
+          <div id="display">0:00:00:00</div>
+        </div>
+        <div class="interface">
+          <button id="count" class="start_btn" type="button">count</button>
+          <button id="reset" class="reset_btn" type="button">reset</button>
+        </div>
+      </div>
       <h1>TIMER</h1>
-      <h3 id="display">00:00:00</h3>
-      <button id="count" type="button">count</button>
-      <button id="reset" type="button">reset</button>
-    </div>
-    <div>
-      <input id="t_h" type="number" value="0" />
-      <input id="t_m" type="number" value="0" />
-      <input id="t_s" type="number" value="0" />
-      <button id="count2" type="button">set</button>
-      <button id="reset2" type="button">reset</button>
+      <div class="content">
+        <div class="display">
+          <input id="t_h" type="number" value="0" maxlength="2" min="0" />
+          <div>:</div>
+          <input
+            id="t_m"
+            type="number"
+            value="0"
+            maxlength="2"
+            min="0"
+            max="59"
+          />
+          <div>:</div>
+          <input
+            id="t_s"
+            type="number"
+            value="0"
+            maxlength="2"
+            min="0"
+            max="59"
+          />
+        </div>
+        <div id="controller">
+          <div class="controll_grp">
+            <div>h</div>
+            <button id="t_h_u">+</button>
+            <button id="t_h_d">-</button>
+          </div>
+          <div class="controll_grp">
+            <div>m</div>
+            <button id="t_m_u">+</button>
+            <button id="t_m_d">-</button>
+          </div>
+          <div class="controll_grp">
+            <div>s</div>
+            <button id="t_s_u">+</button>
+            <button id="t_s_d">-</button>
+          </div>
+        </div>
+        <div class="interface">
+          <button id="count2" class="start_btn" type="button">set</button>
+          <button id="reset2" class="reset_btn" type="button">reset</button>
+        </div>
+      </div>
     </div>
   </body>
   <script type="text/JavaScript" src="./main.js"></script>
