@@ -62,7 +62,12 @@ let timer_fn;
 let count_toggle2 = false;
 
 count2.addEventListener("click", function () {
-  if (t_hours.value < 0 || t_minutes.value < 0 || t_seconds.value < 0) {
+  if (
+    t_hours.value < 0 ||
+    t_minutes.value < 0 ||
+    t_seconds.value < 0 ||
+    t_hours.value + t_minutes.value + t_seconds.value == 0
+  ) {
     alert("Please check the value");
   } else {
     if (!count_toggle2) {
