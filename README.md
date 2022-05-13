@@ -26,3 +26,6 @@
  
 * [4주차 프론트엔트 과제물 ](https://github.com/lee7198/LikeLion/blob/main/cs/week4.md)
   * var, let, const
+
+* [5주차 프론트엔트 과제물 ](https://github.com/lee7198/LikeLion/blob/main/cs/week5.md)
+  * Stop Watch, Timer 만들기
