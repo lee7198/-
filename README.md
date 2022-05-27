@@ -30,6 +30,6 @@
 * [5주차 프론트엔트 과제물 ](https://github.com/lee7198/LikeLion/blob/main/cs/week5.md)
   * Stop Watch, Timer 만들기
 
-* [6주차 React 과제물 ](https://github.com/lee7198/LikeLion/blob/main/cs/week5.md)
+* [6주차 React 과제물 ](https://github.com/lee7198/LionReact)
   * Counting Number App 만들기
   * To do list App 만들기
